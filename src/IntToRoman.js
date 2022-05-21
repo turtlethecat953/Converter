@@ -1,4 +1,8 @@
 export default function IntToRoman(num) {
+  // Boundary case where number is too large
+  if (num>3999){
+    return "MMMCMXCIX"
+  }
   var table = {
     M: 1000,
     CM: 900,
