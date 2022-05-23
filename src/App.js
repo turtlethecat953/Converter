@@ -43,6 +43,9 @@ function App() {
     }else if (input>3999){
       setIntError("The greatest number that can be converted to Roman numerals is 3999") 
       setIntFlag(false)
+    }else if (input<=0){
+      setIntError("Input must be positive integer greater than 0") 
+      setIntFlag(false)
     }else{
       setIntError("")
       setIntFlag(true)
