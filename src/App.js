@@ -20,18 +20,23 @@ function App() {
     int_amount = int_in
     if (Intflag){
       roman_amount = IntToRoman(int_amount)
+    }else{
+      roman_amount = ""
     }
 
   }else{
     roman_amount = roman
     if (romanflag){
       int_amount = RomanToInt(roman_amount)
+    }else{
+      int_amount = NaN
     }
   }
     
 
   function handleInt(e){
     var input = parseFloat(e.target.value)
+    setRomError("")
     if (!Number.isInteger(input)){
       setIntError("Input Must be Integer")
       setIntFlag(false)
@@ -47,7 +52,8 @@ function App() {
   }
 
   function handleRoman(e){
-    if (validRoman.test(e.target.value)){
+    setIntError("")
+    if (validRoman.test(e.target.value.toUpperCase())){
       setRomError("")
       setRomFlag(true)
     }else{
